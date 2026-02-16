@@ -159,6 +159,25 @@
             gap: 16px;
         }
 
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .header-ticker {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0, #e0e0e0);
+            padding: 12px 20px;
+            border: 3px solid #000;
+            border-radius: 8px;
+            box-shadow: 
+                4px 4px 0 #000,
+                6px 6px 0 rgba(0, 0, 0, 0.5);
+        }
+
         .social-link {
             display: flex;
             align-items: center;
@@ -232,7 +251,7 @@
         /* Center Content */
         .center-content {
             position: absolute;
-            top: calc(50% + 140px);
+            top: calc(50% + 185px);
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -983,16 +1002,19 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="contract-address" id="contractAddress" onclick="copyContract()">
-            <div>
-                <div class="label">Contract Address</div>
-                <div class="address">FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump</div>
+        <div class="header-left">
+            <div class="header-ticker">$BALLOON</div>
+            <div class="contract-address" id="contractAddress" onclick="copyContract()">
+                <div>
+                    <div class="label">Contract Address</div>
+                    <div class="address">FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump</div>
+                </div>
+                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span class="copy-tooltip">Copied!</span>
             </div>
-            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            <span class="copy-tooltip">Copied!</span>
         </div>
         <div class="header-right">
             <a href="https://www.tiktok.com/@dr.alexahecht/video/7064617313827392773" target="_blank" class="social-link" title="TikTok">
@@ -1009,7 +1031,6 @@
         <!-- Center Content -->
         <div class="center-content" id="centerContent">
             <h1 class="ticker">Focus on the balloon</h1>
-            <p class="tagline">$BALLOON</p>
             <div class="center-buttons">
                 <a href="https://dexscreener.com/solana/FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump" target="_blank" class="center-btn btn-white">View Chart</a>
                 <a href="https://gmgn.ai/sol/token/FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump" target="_blank" class="center-btn btn-red">Buy Now</a>
