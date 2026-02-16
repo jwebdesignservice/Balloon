@@ -161,8 +161,9 @@
 
         .header-left {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
         }
 
         .header-ticker {
@@ -665,7 +666,7 @@
         .tokenomics-value {
             font-family: 'Press Start 2P', cursive;
             font-size: clamp(18px, 3vw, 28px);
-            color: #dc3545;
+            color: white;
             margin-bottom: 10px;
             text-shadow: 
                 3px 3px 0 #000,
@@ -1003,18 +1004,15 @@
     <!-- Header -->
     <header class="header">
         <div class="header-left">
-            <div class="header-ticker">$BALLOON</div>
             <div class="contract-address" id="contractAddress" onclick="copyContract()">
-                <div>
-                    <div class="label">Contract Address</div>
-                    <div class="address">FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump</div>
-                </div>
+                <div class="address">FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump</div>
                 <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
                 <span class="copy-tooltip">Copied!</span>
             </div>
+            <div class="header-ticker">$BALLOON</div>
         </div>
         <div class="header-right">
             <a href="https://www.tiktok.com/@dr.alexahecht/video/7064617313827392773" target="_blank" class="social-link" title="TikTok">
