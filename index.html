@@ -524,16 +524,65 @@
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 15px 20px;
+                padding: 15px 15px;
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .header-left {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .header-ticker {
+                font-size: 11px;
+                padding: 10px 16px;
+                box-shadow: 
+                    3px 3px 0 #000;
+            }
+
+            .contract-address {
+                width: auto;
+                max-width: 100%;
+                padding: 8px 12px;
+                box-shadow: 
+                    3px 3px 0 #000;
             }
 
             .contract-address .address {
-                font-size: 11px;
+                font-size: 8px;
                 max-width: 180px;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .header-right {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .buy-now-btn {
+                font-size: 7px;
+                padding: 10px 18px;
+                box-shadow: 
+                    3px 3px 0 #000;
+            }
+
+            .social-link {
+                width: 38px;
+                height: 38px;
+                box-shadow: 
+                    3px 3px 0 #000;
+            }
+
+            .social-link svg {
+                width: 18px;
+                height: 18px;
             }
 
             .market-overlay {
@@ -548,13 +597,18 @@
             }
 
             .balloon-click-area {
-                padding: 6px 10px;
+                padding: 5px 8px;
                 gap: 4px;
+                border-width: 2px;
+                border-radius: 16px;
+                box-shadow: 
+                    2px 2px 0 #000,
+                    3px 3px 0 rgba(0, 0, 0, 0.5);
             }
 
             .balloon-click-area .search-icon {
-                width: 8px;
-                height: 8px;
+                width: 7px;
+                height: 7px;
             }
 
             .balloon-click-area .click-text {
@@ -570,14 +624,90 @@
                 font-size: 8px;
                 padding: 12px 20px;
             }
+        }
 
-            .balloon-click-area .search-icon {
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 10px;
+                gap: 10px;
+            }
+
+            .header-left {
+                gap: 8px;
+            }
+
+            .header-ticker {
+                font-size: 9px;
+                padding: 8px 12px;
+                box-shadow: 
+                    2px 2px 0 #000;
+            }
+
+            .contract-address {
+                padding: 6px 10px;
+                box-shadow: 
+                    2px 2px 0 #000;
+            }
+
+            .contract-address .address {
+                font-size: 6px;
+                max-width: 140px;
+            }
+
+            .contract-address .copy-icon {
+                width: 12px;
+                height: 12px;
+            }
+
+            .header-right {
+                gap: 8px;
+            }
+
+            .buy-now-btn {
+                font-size: 6px;
+                padding: 8px 12px;
+                box-shadow: 
+                    2px 2px 0 #000;
+            }
+
+            .social-link {
+                width: 32px;
+                height: 32px;
+                box-shadow: 
+                    2px 2px 0 #000;
+            }
+
+            .social-link svg {
                 width: 14px;
                 height: 14px;
             }
 
+            .center-buttons {
+                gap: 10px;
+            }
+
+            .center-btn {
+                font-size: 6px;
+                padding: 8px 14px;
+            }
+
+            .balloon-click-area {
+                padding: 4px 6px;
+                gap: 3px;
+                border-width: 1px;
+                border-radius: 12px;
+                box-shadow: 
+                    1px 1px 0 #000,
+                    2px 2px 0 rgba(0, 0, 0, 0.5);
+            }
+
+            .balloon-click-area .search-icon {
+                width: 5px;
+                height: 5px;
+            }
+
             .balloon-click-area .click-text {
-                font-size: 8px;
+                font-size: 3px;
             }
         }
 
@@ -1004,6 +1134,7 @@
     <!-- Header -->
     <header class="header">
         <div class="header-left">
+            <div class="header-ticker">$BALLOON</div>
             <div class="contract-address" id="contractAddress" onclick="copyContract()">
                 <div class="address">FVsMQf8KvAERdsi35Fk1j6UhWoWBjssFJPDKZ8yopump</div>
                 <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1012,7 +1143,6 @@
                 </svg>
                 <span class="copy-tooltip">Copied!</span>
             </div>
-            <div class="header-ticker">$BALLOON</div>
         </div>
         <div class="header-right">
             <a href="https://www.tiktok.com/@dr.alexahecht/video/7064617313827392773" target="_blank" class="social-link" title="TikTok">
