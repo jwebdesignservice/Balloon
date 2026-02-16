@@ -42,7 +42,7 @@
         }
 
         .background-container.zoomed {
-            transform: scale(1.5);
+            transform: scale(1.2);
         }
 
         /* Spotlight/Vignette Overlay */
@@ -59,11 +59,10 @@
             background: radial-gradient(
                 circle at 50% 40%,
                 transparent 0%,
-                transparent 15%,
-                rgba(0, 0, 0, 0.3) 25%,
-                rgba(0, 0, 0, 0.7) 35%,
-                rgba(0, 0, 0, 0.95) 50%,
-                #000 60%
+                transparent 28%,
+                rgba(0, 0, 0, 0.7) 34%,
+                rgba(0, 0, 0, 0.95) 42%,
+                #000 50%
             );
         }
 
@@ -248,12 +247,20 @@
 
         .ticker {
             font-family: 'Press Start 2P', cursive;
-            font-size: clamp(24px, 6vw, 60px);
+            font-size: clamp(16px, 4vw, 48px);
             font-weight: 400;
             text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
             letter-spacing: 2px;
             margin-bottom: 24px;
             line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .ticker {
+                white-space: normal;
+                font-size: clamp(14px, 5vw, 24px);
+            }
         }
 
         .tagline {
@@ -332,7 +339,7 @@
         /* Click Area for Balloon */
         .balloon-click-area {
             position: absolute;
-            top: 28%;
+            top: calc(28% + 60px);
             left: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
@@ -341,16 +348,16 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 12px 20px;
+            gap: 6px;
+            padding: 8px 14px;
             background: linear-gradient(135deg, rgba(180, 30, 30, 0.5), rgba(140, 25, 25, 0.4));
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 3px solid #000;
-            border-radius: 30px;
+            border: 2px solid #000;
+            border-radius: 20px;
             box-shadow: 
-                4px 4px 0 #000,
-                6px 6px 0 rgba(0, 0, 0, 0.5);
+                3px 3px 0 #000,
+                4px 4px 0 rgba(0, 0, 0, 0.5);
             transition: all 0.1s ease;
         }
 
@@ -363,28 +370,28 @@
             background: linear-gradient(135deg, rgba(200, 40, 40, 0.6), rgba(160, 30, 30, 0.5));
             transform: translate(-50%, -50%) translate(2px, 2px);
             box-shadow: 
-                2px 2px 0 #000,
-                3px 3px 0 rgba(0, 0, 0, 0.5);
+                1px 1px 0 #000,
+                2px 2px 0 rgba(0, 0, 0, 0.5);
         }
 
         .balloon-click-area:active {
-            transform: translate(-50%, -50%) translate(4px, 4px);
+            transform: translate(-50%, -50%) translate(3px, 3px);
             box-shadow: 0 0 0 #000;
         }
 
         .balloon-click-area .search-icon {
-            width: 16px;
-            height: 16px;
+            width: 10px;
+            height: 10px;
             color: white;
             opacity: 0.95;
         }
 
         .balloon-click-area .click-text {
             font-family: 'Press Start 2P', cursive;
-            font-size: 8px;
+            font-size: 5px;
             font-weight: 400;
             color: white;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
         }
 
@@ -521,8 +528,17 @@
             }
 
             .balloon-click-area {
-                padding: 10px 16px;
-                gap: 8px;
+                padding: 6px 10px;
+                gap: 4px;
+            }
+
+            .balloon-click-area .search-icon {
+                width: 8px;
+                height: 8px;
+            }
+
+            .balloon-click-area .click-text {
+                font-size: 4px;
             }
 
             .center-buttons {
@@ -632,6 +648,9 @@
             font-size: clamp(18px, 3vw, 28px);
             color: #dc3545;
             margin-bottom: 10px;
+            text-shadow: 
+                3px 3px 0 #000,
+                4px 4px 0 rgba(0, 0, 0, 0.5);
         }
 
         .tokenomics-label {
@@ -792,8 +811,20 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .step-card {
